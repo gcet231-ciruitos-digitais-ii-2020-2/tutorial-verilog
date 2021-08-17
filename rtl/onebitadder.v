@@ -1,4 +1,4 @@
-// Tutorial 1 - 1 bit full adder
+// Tutorial 4 - 1 bit full adder
 //
 module onebitadder (
   input a, b, cin,
