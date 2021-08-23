@@ -7,8 +7,15 @@ module register_bank #(
    input                   rst,
    input                   wr_en,
    input       [WIDTH-1:0] in,
-   output      [WIDTH-1:0] out
+   output  reg [WIDTH-1:0] out
 );
    
-
+ always @(posedge clk) begin : proc_out
+   if(!rst) begin
+     out <= 0;
+   end else if (wr_en) out <= in;
+   else begin
+     out <= out;
+   end
+ end
 endmodule
